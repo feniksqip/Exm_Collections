@@ -66,6 +66,10 @@ static NSString * const reuseIdentifier = @"Cell";
     if (!cell) {
         cell = [[UICollectionViewCell alloc] init];
     }
+  //  cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[collectionArray objectAtIndex:indexPath.row]]]; // Without tags and Images Above.
+    
+    UIImageView *imageView = (UIImageView *) [cell viewWithTag:100];
+    imageView.image = [UIImage imageNamed:[collectionArray objectAtIndex:indexPath.row]];
     
     return cell;
 }
